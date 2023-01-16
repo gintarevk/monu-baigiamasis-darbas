@@ -96,5 +96,10 @@ namespace Framework
             actions.MoveToElement(element);
             actions.Perform();
         }
+
+        internal static void ClickElement(object elementKontaktaiLocator)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

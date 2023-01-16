@@ -11,35 +11,35 @@ namespace Framework.POM
     {
         private static string url = "https://monu.lt/";
         private static string closeLocator = "//*[@id='ml-webforms-popup-4991222']";
+        private static object elementKontaktaiLocator = "//*[@id='menu-item-349']/a";
+        private static string emailLocator = "//*[@id='wpcf7-f2066-p342-o1']/form/p[2]/label/span/input";
+        private static string messageLocator = "//*[@id='wpcf7-f2066-p342-o1']/form/p[4]/label/span/textarea";
+        private static string nameLocator = "//*[@id='wpcf7-f2066-p342-o1']/form/p[1]/label/span/input";
+        private static string themeLocator = "//*[@id=\"wpcf7-f2066-p342-o1\"]/form/p[3]/label/span/input";
 
         public static void ClickOnElementKontaktai()
         {
-            throw new NotImplementedException();
+            Common.ClickElement(elementKontaktaiLocator);
         }
 
-        public static void ClickOnElement()
+        public static void EnterTextToFieldEmail(string value)
         {
-            throw new NotImplementedException();
+            Common.SendKeysToElement(emailLocator, value);
         }
 
-        public static void EnterTextToFieldEmail()
+        public static void EnterTextToFieldMessage(string value)
         {
-            throw new NotImplementedException();
-        }
-
-        public static void EnterTextToFieldMessage()
-        {
-            throw new NotImplementedException();
+            Common.SendKeysToElement(messageLocator, value);
         }
 
         public static void EnterTextToFieldName(string value)
         {
-            Common.SendKeysToElement("lokatorius", value);
+            Common.SendKeysToElement(nameLocator, value);
         }
 
-        public static void EnterTextToFieldTheme()
+        public static void EnterTextToFieldTheme(string value)
         {
-            throw new NotImplementedException();
+            Common.SendKeysToElement(themeLocator, value);
         }
 
         public static void Open()

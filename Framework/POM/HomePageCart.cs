@@ -19,6 +19,8 @@ namespace Framework.POM
         private static string atnaujintiKrepseliLocator = "//*[@id='wrapper']/div[2]/div/div[3]/div/div/div[4]/div[1]/form/table/tbody/tr[2]/td/button";
         private static string cartIsEmptyLocator = "//*[@id='wrapper']/div[2]/div/div[3]/div/div/div/div[2]";
         private static string closeLocator = "//*[@id='ml-webforms-popup-4991222']";
+        private static string testiAtsiskaitymaLocator = "";
+        private static string pirkejoDuomenysLocator = "//*[@id='customer_details']/div[1]/div[2]/h3/text()";
 
         public static void Open()
         {
@@ -65,6 +67,17 @@ namespace Framework.POM
         {
             Common.GetElement(cartIsEmptyLocator);
             return Common.GetElementText(cartIsEmptyLocator);
+        }
+
+        public static void ClickOnElementTestiAtsiskaityma()
+        {
+            Common.ClickElement(testiAtsiskaitymaLocator); 
+        }
+
+        public static string GetElement()
+        {
+            Common.GetElement(pirkejoDuomenysLocator);
+            return Common.GetElementText(pirkejoDuomenysLocator);
         }
     }
 }       

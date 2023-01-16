@@ -26,8 +26,8 @@ namespace Tests
             HomePageSendingTheMessage.ClickOnElementKontaktai();
             HomePageSendingTheMessage.EnterTextToFieldName("gi");
             HomePageSendingTheMessage.EnterTextToFieldEmail("g8star@gmail.com");
-            HomePageSendingTheMessage.EnterTextToFieldTheme();
-            HomePageSendingTheMessage.EnterTextToFieldMessage();
+            HomePageSendingTheMessage.EnterTextToFieldTheme("Klausimas");
+            HomePageSendingTheMessage.EnterTextToFieldMessage("Ar galiu atvažiuoti?");
             string actualResult = HomePageSendingTheMessage.SkaitytiGautaZinute();
 
             string expectedResult = "Dėkojame už pranešimą. Jis buvo išsiųstas.";
@@ -35,10 +35,10 @@ namespace Tests
             Assert.IsTrue(expectedResult.Equals(actualResult));
         }
 
-        //[TearDown]
-        //public void TearDown()
-        //{
-        //    Driver.CloseDriver();
-        //}
+        [TearDown]
+        public void TearDown()
+        {
+            Driver.CloseDriver();
+        }
     }
 }

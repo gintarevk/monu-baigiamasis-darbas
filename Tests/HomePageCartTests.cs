@@ -51,20 +51,21 @@ namespace Tests
         public void HomePageCartContinueToBye()
         {
             string expectedResult = "Krepšelis dar tuščias";
-            HomePageCartContinueToBye.ClickOnProduct();
-            HomePageCartContinueToBye.ClickAddProductToCart();
-            HomePageCartContinueToBye.ClickShowToCart();
+            HomePageCart.ClickOnProduct();
+            HomePageCart.ClickAddProductToCart();
+            HomePageCart.ClickShowToCart();
+            HomePageCart.ClickOnElementTestiAtsiskaityma();
+            HomePageCart.GetElement();
 
             string actualResult = HomePageCart.ProductIsInTheCart();
 
             Assert.AreEqual(expectedResult, actualResult);
-
         }
 
         [TearDown]
-            public void TearDown()
-            {
-                //Driver.CloseDriver();
-            }
+        public void TearDown()
+        {
+            Driver.CloseDriver();
         }
     }
+}

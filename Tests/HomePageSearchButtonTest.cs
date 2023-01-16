@@ -32,10 +32,10 @@ namespace Tests
             Assert.IsTrue(actualResult.Contains(expectedResult));
         }
 
-        //[TearDown]
-        //public void TearDown()
-        //{
-        //    Driver.CloseDriver();
-        //}
+        [TearDown]
+        public void TearDown()
+        {
+            Driver.CloseDriver();
+        }
     }
 }

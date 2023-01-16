@@ -22,13 +22,12 @@ namespace Tests
 
         public void HomePageCheckSendingTheMessage()
         {
-            HomePageSendingTheMessage.ScrollDown();
             HomePageSendingTheMessage.ClickOnElementKontaktai();
             HomePageSendingTheMessage.EnterTextToFieldName("gi");
             HomePageSendingTheMessage.EnterTextToFieldEmail("g8star@gmail.com");
             HomePageSendingTheMessage.EnterTextToFieldTheme("Klausimas");
             HomePageSendingTheMessage.EnterTextToFieldMessage("Ar galiu atvažiuoti?");
-            string actualResult = HomePageSendingTheMessage.SkaitytiGautaZinute();
+            string actualResult = HomePageSendingTheMessage.TextOfConfirmingSendingMessage();
 
             string expectedResult = "Dėkojame už pranešimą. Jis buvo išsiųstas.";
 

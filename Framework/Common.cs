@@ -35,20 +35,9 @@ namespace Framework
             return GetElement(locator).Text;
         }
 
-        internal static string GetAttributeValue(string locator, string attributeName)
-        {
-            return GetElement(locator).GetAttribute(attributeName);
-        }
-
-        internal static void WaitForElementToBeClickable(string locator)
-        {
-            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(20));
-            wait.Until(ExpectedConditions.ElementExists(By.XPath(locator)));
-        }
-
         internal static void WaitForElementToBeVisible(string locator)
         {
-            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(120));
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(40));
             wait.Until(ExpectedConditions.ElementExists(By.XPath(locator)));
         }
 
@@ -69,15 +58,10 @@ namespace Framework
         {
             Actions actions = new Actions(Driver.GetDriver());
 
-            actions.MoveByOffset(20, 20);
+            actions.MoveByOffset(50, 50);
             actions.Perform();
-            actions.MoveByOffset(-20, -20);
+            actions.MoveByOffset(-50, -50);
             actions.Perform();
-        }
-
-        internal static void WaitForElementToBeVisible(object iframeLocator)
-        {
-            throw new NotImplementedException();
         }
 
         internal static void WaitForElementToBeClickableIgnoreNotInteractable(string locator)

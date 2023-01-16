@@ -10,18 +10,17 @@ namespace Framework.POM
     public class HomePageCart
     {
         private static string url = "https://monu.lt/";
-        private static string firstProductLocator = "//*[@id='slick-slide10']/div//a";
-        private static string addProductToCartLocator = "//*[@id='product-10878']/div[1]/div[2]/div/div[2]/div/div[3]/form/div/button";
-        private static string showToCartLocator = "//*[@id='header']/div[2]/div/div[3]/a[1]/span[2]";
-        private static string closeAdLocator = "//*[@id='ml-webforms-popup-4991222']";
-        private static string minusOneLocator = "//*[@id='wrapper']/div[2]/div/div[3]/div/div/div[4]/div[1]/form/table/tbody/tr[1]/td[2]/div/div[2]/div/span[1]";
-        private static string productinCartLocator = "//*[@id='header']/div[1]/div/div[3]/a[1]/span[2]";
-        private static string atnaujintiKrepseliLocator = "//*[@id='wrapper']/div[2]/div/div[3]/div/div/div[4]/div[1]/form/table/tbody/tr[2]/td/button";
-        private static string cartIsEmptyLocator = "//*[@id='wrapper']/div[2]/div/div[3]/div/div/div/div[2]";
+        private static string firstProductLocator = "//*[@title= 'Žalioji arbata Teministeriet – 262, braškės ir avietės, 100 g']";
+        private static string addProductToCartLocator = "//*[@type = 'submit'][1]";
+        private static string showToCartLocator = "//span[@class='item-counter minicart-counter'][1]";
+        private static string minusOneLocator = "//*[@class = 'minus']";
+        private static string productinCartLocator = "//*[@title = 'Cart'][1]";
+        private static string atnaujintiKrepseliLocator = "//button[@name][1]";
+        private static string cartIsEmptyLocator = "//div[@class='woocommerce-notices-wrapper']";
         private static string closeLocator = "//*[@id='ml-webforms-popup-4991222']";
-        private static string testiAtsiskaitymaLocator = "";
-        private static string pirkejoDuomenysLocator = "//*[@id='customer_details']/div[1]/div[2]/h3/text()";
-
+        private static string testiAtsiskaitymaLocator = "//*[@class='checkout-button button alt wc-forward']";
+        private static string pirkejoDuomenysLocator = "//*[@class='col-1']";
+        ////*[@id="header"]/div[1]/div/div[3]/a[1]/svg
         public static void Open()
         {
             Driver.OpenPage(url);
@@ -63,6 +62,7 @@ namespace Framework.POM
         {
             Common.ClickElement(atnaujintiKrepseliLocator);
         }
+
         public static string TheCartIsEmpty()
         {
             Common.GetElement(cartIsEmptyLocator);
@@ -73,7 +73,7 @@ namespace Framework.POM
         {
             Common.ClickElement(testiAtsiskaitymaLocator); 
         }
-
+        
         public static string GetElement()
         {
             Common.GetElement(pirkejoDuomenysLocator);

@@ -11,11 +11,12 @@ namespace Framework.POM
     {
         private static string url = "https://monu.lt/";
         private static string closeLocator = "//*[@id='ml-webforms-popup-4991222']";
-        private static object elementKontaktaiLocator = "//*[@id='menu-item-349']/a";
-        private static string emailLocator = "//*[@id='wpcf7-f2066-p342-o1']/form/p[2]/label/span/input";
-        private static string messageLocator = "//*[@id='wpcf7-f2066-p342-o1']/form/p[4]/label/span/textarea";
-        private static string nameLocator = "//*[@id='wpcf7-f2066-p342-o1']/form/p[1]/label/span/input";
-        private static string themeLocator = "//*[@id=\"wpcf7-f2066-p342-o1\"]/form/p[3]/label/span/input";
+        private static object elementKontaktaiLocator = "//*[@id='menu-item-349']";
+        private static string emailLocator = "//*[@type='email']";
+        private static string messageLocator = "//*[@name='your-message']";
+        private static string nameLocator = "//input[@name='your-name']";
+        private static string themeLocator = "//input[@name='your-subject']";
+        private static string ConfirmingMessageLocator = "//div[@class='wpcf7-response-output']";
 
         public static void ClickOnElementKontaktai()
         {
@@ -50,14 +51,10 @@ namespace Framework.POM
             Common.CloseAdd();
         }
 
-        public static void ScrollDown()
+        public static string TextOfConfirmingSendingMessage()
         {
-            throw new NotImplementedException();
-        }
-
-        public static string SkaitytiGautaZinute()
-        {
-            throw new NotImplementedException();
+            Common.GetElement(ConfirmingMessageLocator);
+            return Common.GetElementText(ConfirmingMessageLocator);
         }
     }
 }

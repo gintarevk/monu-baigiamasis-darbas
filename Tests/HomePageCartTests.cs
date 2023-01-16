@@ -62,10 +62,10 @@ namespace Tests
             Assert.AreEqual(expectedResult, actualResult);
         }
 
-        [TearDown]
-        public void TearDown()
-        {
-            Driver.CloseDriver();
-        }
+        //[TearDown]
+        //public void TearDown()
+        //{
+        //    Driver.CloseDriver();
+        //}
     }
 }

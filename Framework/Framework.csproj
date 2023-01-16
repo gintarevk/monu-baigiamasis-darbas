@@ -53,6 +53,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common.cs" />
+    <Compile Include="Driver.cs" />
+    <Compile Include="POM\CommonMonu.cs" />
+    <Compile Include="POM\HomePageCart.cs" />
+    <Compile Include="POM\HomePageSearchButton.cs" />
+    <Compile Include="POM\HomePageSendingTheMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -11,13 +11,20 @@ namespace Framework.POM
     {
         private static string url = "https://monu.lt/";
         private static string closeLocator = "//*[@id='ml-webforms-popup-4991222']";
-        private static object elementKontaktaiLocator = "//*[@id='menu-item-349']";
+        private static string elementKontaktaiLocator = "//*[@id='menu-item-349']";
         private static string emailLocator = "//*[@type='email']";
         private static string messageLocator = "//*[@name='your-message']";
         private static string nameLocator = "//input[@name='your-name']";
         private static string themeLocator = "//input[@name='your-subject']";
-        private static string ConfirmingMessageLocator = "//div[@class='wpcf7-response-output']";
+        private static string confirmingMessageLocator = "//div[@class='wpcf7-response-output']";
 
+        public static void Open()
+        {
+            Driver.OpenPage(url);
+            Common.MoveMouse();
+            Common.WaitForElementToBeVisible(closeLocator);
+            Common.CloseAdd();
+        }
         public static void ClickOnElementKontaktai()
         {
             Common.ClickElement(elementKontaktaiLocator);
@@ -43,18 +50,10 @@ namespace Framework.POM
             Common.SendKeysToElement(themeLocator, value);
         }
 
-        public static void Open()
-        {
-            Driver.OpenPage(url);
-            Common.MoveMouse();
-            Common.WaitForElementToBeVisible(closeLocator);
-            Common.CloseAdd();
-        }
-
         public static string TextOfConfirmingSendingMessage()
         {
-            Common.GetElement(ConfirmingMessageLocator);
-            return Common.GetElementText(ConfirmingMessageLocator);
+            Common.GetElement(confirmingMessageLocator);
+            return Common.GetElementText(confirmingMessageLocator);
         }
     }
 }

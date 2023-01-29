@@ -6,18 +6,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tests.BaseClasses;
 
 namespace Tests
 {
-    public class HomePageSendingTheMessageTests
+    public class HomePageSendingTheMessageTests :BaseTest
     {
         [SetUp]
 
-        public void SetUp()
+        public void Open()
         {
-            Driver.Initialize();
             HomePageSendingTheMessage.Open();
         }
+
         [Test]
 
         public void HomePageCheckSendingTheMessage()
@@ -32,12 +33,6 @@ namespace Tests
             string expectedResult = "Dėkojame už pranešimą. Jis buvo išsiųstas.";
 
             Assert.IsTrue(expectedResult.Equals(actualResult));
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-            Driver.CloseDriver();
         }
     }
 }

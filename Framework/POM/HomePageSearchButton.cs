@@ -25,8 +25,8 @@ namespace Framework.POM
             Common.WaitForElementToBeVisible(closeLocator);
             Common.CloseAdd();
         }
-
-        public static void ClickSearchButton()
+        
+        public static void ClickOnSearchButton()
         {
             Common.ClickElement(searchButtonLocator);
         }
@@ -37,7 +37,7 @@ namespace Framework.POM
             Common.SendKeysToElement(searchFieldLocator, text);
         }
 
-        public static void ClickSearchButtonWithText()
+        public static void ClickOnSearchFieldWithText()
         {
             Common.ClickElement(searchButtonWithTextLocator);
         }

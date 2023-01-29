@@ -7,16 +7,16 @@ using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
 using System.Security.AccessControl;
+using Tests.BaseClasses;
 
 namespace Tests
 {
-    public class HomePageSearchButtonTest
+    public class HomePageSearchButtonTest : BaseTest
     {
         [SetUp]
 
-        public void SetUp()
+        public void Open()
         {
-            Driver.Initialize();
             HomePageSearchButton.Open();
         }
 
@@ -24,18 +24,12 @@ namespace Tests
         public void CheckingSearchButtonFunctionality()
         {
             string expectedResult = "Juodi degtukai";
-            HomePageSearchButton.ClickSearchButton();
+            HomePageSearchButton.ClickOnSearchButton();
             HomePageSearchButton.EnterTextToSearchField(expectedResult);
-            HomePageSearchButton.ClickSearchButtonWithText();
+            HomePageSearchButton.ClickOnSearchFieldWithText();
             string actualResult = HomePageSearchButton.GetSearchResultMessage();
 
             Assert.IsTrue(actualResult.Contains(expectedResult));
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-            Driver.CloseDriver();
         }
     }
 }

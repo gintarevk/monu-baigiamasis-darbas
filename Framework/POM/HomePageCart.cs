@@ -10,7 +10,7 @@ namespace Framework.POM
     public class HomePageCart
     {
         private static string url = "https://monu.lt/";
-        private static string firstProductLocator = "//*[@title= 'Žalioji arbata Teministeriet – 262, braškės ir avietės, 100 g']";
+        private static string firstProductLocator = "//*[@id='slick-slide10']/div/div/div[1]/h2/a";
         private static string addProductToCartLocator = "//*[@type = 'submit'][1]";
         private static string showToCartLocator = "//span[@class='item-counter minicart-counter'][1]";
         private static string minusOneLocator = "//*[@class = 'minus']";
@@ -20,7 +20,7 @@ namespace Framework.POM
         private static string closeLocator = "//*[@id='ml-webforms-popup-4991222']";
         private static string testiAtsiskaitymaLocator = "//*[@class='checkout-button button alt wc-forward']";
         private static string pirkejoDuomenysLocator = "//*[@class='col-1']";
-        ////*[@id="header"]/div[1]/div/div[3]/a[1]/svg
+        
         public static void Open()
         {
             Driver.OpenPage(url);

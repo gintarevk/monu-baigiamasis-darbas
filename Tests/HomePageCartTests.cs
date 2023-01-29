@@ -6,16 +6,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tests.BaseClasses;
 
 namespace Tests
 {
-    public class HomePageCartTests
+    public class HomePageCartTests : BaseTest 
     {
         [SetUp]
 
-        public void SetUp()
+        public void Open()
         {
-            Driver.Initialize();
             HomePageCart.Open();
         }
 
@@ -23,14 +23,16 @@ namespace Tests
 
         public void AddingProductToCart()
         {
-            string expectedResult = "Žalioji arbata Teministeriet – 262, braškės ir avietės, 100 g";
+            string expectedResult = "Naturalūs smilkalai Purnama Rituals-GRPINDING PRESENCE (vyšnių žiedai, sandalmedis)";
+            string actualResult = HomePageCart.ProductIsInTheCart();
+
             HomePageCart.ClickOnProduct();
             HomePageCart.ClickAddProductToCart();
             HomePageCart.ClickShowToCart();
-            string actualResult = HomePageCart.ProductIsInTheCart();
 
             Assert.AreEqual(expectedResult, actualResult);
         }
+
         [Test]
 
         public void EmptyingTheCart()
@@ -44,28 +46,22 @@ namespace Tests
             string actualResult = HomePageCart.TheCartIsEmpty();
 
             Assert.AreEqual(expectedResult, actualResult);
-            
         }
+
         [Test]
 
         public void HomePageCartContinueToBye()
         {
             string expectedResult = "Krepšelis dar tuščias";
+            string actualResult = HomePageCart.ProductIsInTheCart();
+
             HomePageCart.ClickOnProduct();
             HomePageCart.ClickAddProductToCart();
             HomePageCart.ClickShowToCart();
             HomePageCart.ClickOnElementTestiAtsiskaityma();
             HomePageCart.GetElement();
 
-            string actualResult = HomePageCart.ProductIsInTheCart();
-
             Assert.AreEqual(expectedResult, actualResult);
         }
-
-        //[TearDown]
-        //public void TearDown()
-        //{
-        //    Driver.CloseDriver();
-        //}
     }
 }

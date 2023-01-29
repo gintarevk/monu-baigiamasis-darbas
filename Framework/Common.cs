@@ -37,7 +37,7 @@ namespace Framework
 
         internal static void WaitForElementToBeVisible(string locator)
         {
-            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(40));
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(20));
             wait.Until(ExpectedConditions.ElementExists(By.XPath(locator)));
         }
 
@@ -79,11 +79,6 @@ namespace Framework
             actions.ScrollToElement(element);
             actions.MoveToElement(element);
             actions.Perform();
-        }
-
-        internal static void ClickElement(object elementKontaktaiLocator)
-        {
-            throw new NotImplementedException();
         }
     }
 }

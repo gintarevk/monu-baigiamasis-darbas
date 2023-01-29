@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseClasses\BaseTest.cs" />
     <Compile Include="HomePageCartTests.cs" />
     <Compile Include="HomePageSearchButtonTest.cs" />
     <Compile Include="HomePageSendingTheMessageTests.cs" />

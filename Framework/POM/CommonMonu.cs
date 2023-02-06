@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Framework.POM
+﻿namespace Framework.POM
 {
     public class CommonMonu
     {
-        private static string addCloseButtonLocator = "(//*[@aria-label='Close'])[1]";
+        private static string addCloseButtonLocator = "/html/body/div[1]/div/div[1]/div/div[1]/button";
         private static string iframeLocator = "//*[@id='ml-webforms-popup-4991222']";
-
+        
         public static void CloseAdd()
         {
             Common.MoveMouse();

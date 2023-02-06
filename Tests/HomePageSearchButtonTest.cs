@@ -1,23 +1,17 @@
-﻿using Framework;
-using Framework.POM;
+﻿using Framework.POM;
 using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
-using SeleniumExtras.WaitHelpers;
-using System;
-using System.Security.AccessControl;
 using Tests.BaseClasses;
 
 namespace Tests
 {
-    public class HomePageSearchButtonTest : BaseTest
+    internal class HomePageSearchButtonTest : BaseTest
     {
         [SetUp]
 
         public void Open()
         {
             HomePageSearchButton.Open();
+            CommonMonu.CloseAdd();
         }
 
         [Test]

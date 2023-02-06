@@ -3,18 +3,14 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Framework
 {
     internal class Common
     {
-        private static string addCloseButtonLocator = "(//*[@aria-label='Close'])[1]";
+        private static string addCloseButtonLocator = "/html/body/div[1]/div/div[1]/div/div[1]/button";
         private static string iframeLocator = "//*[@id='ml-webforms-popup-4991222']";
-
+        
         internal static IWebElement GetElement(string locator)
         {
             return Driver.GetDriver().FindElement(By.XPath(locator));
@@ -37,13 +33,13 @@ namespace Framework
 
         internal static void WaitForElementToBeVisible(string locator)
         {
-            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(20));
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
             wait.Until(ExpectedConditions.ElementExists(By.XPath(locator)));
         }
 
-        internal static void SwitchToIframeByLocator(string iframeElementLocator)
+        internal static void SwitchToIframeByLocator(string locator)
         {
-            IWebElement iframe = GetElement(iframeElementLocator);
+            IWebElement iframe = GetElement(locator);
             Driver.GetDriver().SwitchTo().Frame(iframe);
         }
 

@@ -1,9 +1,4 @@
-﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace Framework.POM
 {
@@ -14,19 +9,15 @@ namespace Framework.POM
         private static string addProductToCartLocator = "//*[@type = 'submit'][1]";
         private static string showToCartLocator = "//span[@class='item-counter minicart-counter'][1]";
         private static string minusOneLocator = "//*[@class = 'minus']";
-        private static string productinCartLocator = "//*[@title = 'Cart'][1]";
+        private static string productinCartLocator = "//div[@class='col-md-6 col-sm-12 product-name']";
         private static string atnaujintiKrepseliLocator = "//button[@name][1]";
         private static string cartIsEmptyLocator = "//div[@class='woocommerce-notices-wrapper']";
-        private static string closeLocator = "//*[@id='ml-webforms-popup-4991222']";
         private static string testiAtsiskaitymaLocator = "//*[@class='checkout-button button alt wc-forward']";
         private static string pirkejoDuomenysLocator = "//*[@class='col-1']";
         
         public static void Open()
         {
             Driver.OpenPage(url);
-            Common.MoveMouse();
-            Common.WaitForElementToBeVisible(closeLocator);
-            Common.CloseAdd();
         }
 
         public static void ClickOnProduct()
@@ -74,7 +65,7 @@ namespace Framework.POM
             Common.ClickElement(testiAtsiskaitymaLocator); 
         }
         
-        public static string GetElement()
+        public static string PirkejoDuomenys()
         {
             Common.GetElement(pirkejoDuomenysLocator);
             return Common.GetElementText(pirkejoDuomenysLocator);

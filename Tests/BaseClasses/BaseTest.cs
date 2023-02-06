@@ -9,20 +9,20 @@ using System.Threading.Tasks;
 
 namespace Tests.BaseClasses
 {
-    public class BaseTest
+    internal class BaseTest
     {
-        [OneTimeSetUp]
+        [SetUp]
 
         public void SetUp()
         {
             Driver.Initialize();
         }
 
-        //[OneTimeTearDown]
-        public void TearDown()
-        {
-            //Driver.TakeScreenShot();
-            //Driver.CloseDriver();
-        }
+        //[TearDown]
+        //public void TearDown()
+        //{
+        //    Driver.TakeScreenshot(TestContext.CurrentContext.Test.MethodName);
+        //    Driver.CloseDriver();
+        //}
     }
 }

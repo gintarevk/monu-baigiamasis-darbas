@@ -1,13 +1,4 @@
-﻿using OpenQA.Selenium.Support.UI;
-using OpenQA.Selenium;
-using SeleniumExtras.WaitHelpers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Framework.POM
+﻿namespace Framework.POM
 {
     public class HomePageSearchButton
     {
@@ -16,14 +7,10 @@ namespace Framework.POM
         private static string searchButtonLocator = "//*[@class='feather feather-search'][1]";
         private static string searchButtonWithTextLocator = "//button[@type='submit']";
         private static string searchFieldOutputLocator = "//*[@class='page-title']";
-        private static string closeLocator = "//*[@id='ml-webforms-popup-4991222']";
         
         public static void Open()
         {
             Driver.OpenPage(url);
-            Common.MoveMouse();
-            Common.WaitForElementToBeVisible(closeLocator);
-            Common.CloseAdd();
         }
         
         public static void ClickOnSearchButton()

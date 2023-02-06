@@ -29,14 +29,14 @@ namespace Framework
             driver.Quit();
         }
 
-        public static void TakeScreenShot(string testMethodName)
+        public static void TakeScreenshot(string testMethodName)
         {
             string screenshotsDirectoryPath = $"{AppDomain.CurrentDomain.BaseDirectory}screenshots";
             string screenshotName = $"{screenshotsDirectoryPath}\\-{testMethodName}-{DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss")}.png";
 
             Directory.CreateDirectory(screenshotsDirectoryPath);
             Screenshot screenshot = ((ITakesScreenshot)driver).GetScreenshot();
-            screenshot.SaveAsFile(screenshotName, ScreenshotImageFormat.Png); ;
+            screenshot.SaveAsFile(screenshotName, ScreenshotImageFormat.Png);
         }
     }
 }

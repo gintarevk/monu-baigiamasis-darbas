@@ -13,7 +13,7 @@ namespace Framework.POM
         private static string atnaujintiKrepseliLocator = "//button[@name][1]";
         private static string cartIsEmptyLocator = "//div[@class='woocommerce-notices-wrapper']";
         private static string testiAtsiskaitymaLocator = "//*[@class='checkout-button button alt wc-forward']";
-        private static string pirkejoDuomenysLocator = "//*[@class='col-1']";
+        private static string pirkejoDuomenysLocator = "//*[@id='ship-to-different-address']/label/span";
         
         public static void Open()
         {
@@ -40,7 +40,6 @@ namespace Framework.POM
 
         public static string ProductIsInTheCart()
         {
-            Common.GetElement(productinCartLocator);
             return Common.GetElementText(productinCartLocator);
         }
 
@@ -56,8 +55,7 @@ namespace Framework.POM
 
         public static string TheCartIsEmpty()
         {
-            Common.GetElement(cartIsEmptyLocator);
-            return Common.GetElementText(cartIsEmptyLocator);
+           return Common.GetElementText(cartIsEmptyLocator);
         }
 
         public static void ClickOnElementTestiAtsiskaityma()
@@ -67,8 +65,12 @@ namespace Framework.POM
         
         public static string PirkejoDuomenys()
         {
-            Common.GetElement(pirkejoDuomenysLocator);
             return Common.GetElementText(pirkejoDuomenysLocator);
+        }
+
+        public static void WaitForTestiAtsiskaityma()
+        {
+            Common.WaitForElementToBeVisible(testiAtsiskaitymaLocator);
         }
     }
 }       

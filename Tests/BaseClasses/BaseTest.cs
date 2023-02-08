@@ -18,11 +18,11 @@ namespace Tests.BaseClasses
             Driver.Initialize();
         }
 
-        //[TearDown]
-        //public void TearDown()
-        //{
-        //    Driver.TakeScreenshot(TestContext.CurrentContext.Test.MethodName);
-        //    Driver.CloseDriver();
-        //}
+        //    [TearDown]
+        //    public void TearDown()
+        //    {
+        //        Driver.TakeScreenshot(TestContext.CurrentContext.Test.MethodName);
+        //        Driver.CloseDriver();
+        //    }
     }
 }

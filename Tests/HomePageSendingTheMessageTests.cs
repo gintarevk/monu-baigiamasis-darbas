@@ -28,7 +28,7 @@ namespace Tests
 
             string actualResult = HomePageSendingTheMessage.TextOfConfirmingSendingMessage();
 
-            Assert.IsTrue(actualResult.Equals(expectedResult));
+            Assert.AreEqual(actualResult, expectedResult);
         }
     }
 }

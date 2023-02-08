@@ -3,7 +3,7 @@
     public class HomePageSendingTheMessage
     {
         private static string url = "https://monu.lt/";
-        private static string elementKontaktaiLocator = "//*[@id='menu-item-349']/a";
+        private static string elementKontaktaiLocator = "//*[@id='menu-item-349']/a/text()";
         private static string emailLocator = "//*[@id='wpcf7-f2066-p342-o1']/form/p[2]/label/text()";
         private static string messageLocator = "//*[@id='wpcf7-f2066-p342-o1']/form/p[4]/label/text()";
         private static string nameLocator = "//*[@id='wpcf7-f2066-p342-o1']/form/p[1]/label/text()";
@@ -13,10 +13,8 @@
         public static void Open()
         {
             Driver.OpenPage(url);
-            //Common.MoveMouse();
-            //Common.WaitForElementToBeVisible(closeLocator);
-            //Common.CloseAdd();
         }
+
         public static void ClickOnElementKontaktai()
         {
             Common.ClickElement(elementKontaktaiLocator);
@@ -45,7 +43,6 @@
 
         public static string TextOfConfirmingSendingMessage()
         {
-            Common.GetElement(confirmingMessageLocator);
             return Common.GetElementText(confirmingMessageLocator);
         }
     }

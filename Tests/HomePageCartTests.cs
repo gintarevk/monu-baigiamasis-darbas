@@ -50,16 +50,17 @@ namespace Tests
 
         public void HomePageCartContinueToBye()
         {
-            string expectedResult = "Pirkėjo duomenys";
+            string expectedResult = "Siųsti kitu adresu?";
             
             HomePageCart.ClickOnProduct();
             HomePageCart.ClickAddProductToCart();
             HomePageCart.ClickShowToCart();
+            HomePageCart.WaitForTestiAtsiskaityma();
             HomePageCart.ClickOnElementTestiAtsiskaityma();
             
             string actualResult = HomePageCart.PirkejoDuomenys();
 
-            Assert.IsTrue(expectedResult.Contains(actualResult));
+            Assert.AreEqual(expectedResult, actualResult);
         }
     }
 }

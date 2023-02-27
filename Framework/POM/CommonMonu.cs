@@ -11,6 +11,7 @@
             Common.WaitForElementToBeVisible(iframeLocator);
             Common.SwitchToIframeByLocator(iframeLocator);
             Common.ClickElement(addCloseButtonLocator);
+            Common.WaitForElementToBeInvisible(iframeLocator);
             Driver.GetDriver().SwitchTo().DefaultContent();
         }
     }

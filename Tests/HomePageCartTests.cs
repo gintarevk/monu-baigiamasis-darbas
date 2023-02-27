@@ -18,8 +18,9 @@ namespace Tests
 
         public void AddingProductToCart()
         {
-            string expectedResult = "Natūralūs smilkalai Purnama Rituals - GROUNDING PRESENCE (vyšnių žiedai, sandalmedis)\r\n13.00 €";
-            
+            //string expectedResult = "Natūralūs smilkalai Purnama Rituals - GROUNDING PRESENCE (vyšnių žiedai, sandalmedis)\r\n13.00 €";
+            string expectedResult = "Namų kvapas FYG - Frankinsense & Myrrh, 125 ml\r\n28.00 €";
+
             HomePageCart.ClickOnProduct();
             HomePageCart.ClickAddProductToCart();
             HomePageCart.ClickShowToCart();

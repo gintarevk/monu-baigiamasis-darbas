@@ -4,7 +4,7 @@
     {
         private static string url = "https://monu.lt/";
         private static string searchFieldLocator = "//input[contains(@placeholder,'Ieškoti …')]";
-        private static string searchButtonLocator = "//*[@class='feather feather-search'][1]";
+        private static string searchButtonLocator = "(//*[contains(@class, 'quick_search')])[2]";
         private static string searchButtonWithTextLocator = "//button[@type='submit']";
         private static string searchFieldOutputLocator = "//*[@class='page-title']";
         

@@ -8,6 +8,7 @@ namespace Framework.POM
         private static string firstProductLocator = "//*[@id='slick-slide10']/div/div/div[1]/h2/a";
         private static string addProductToCartLocator = "//*[@type = 'submit'][1]";
         private static string addProductToCartLoadingLocator = "//*[@type = 'submit' and contains(@class, 'et-loader')][1]";
+        private static string showToCartLocator = "//*[contains(@class, 'header-mobile')]//*[@data-target='open-cart']";
         private static string minusOneLocator = "//*[@class = 'minus']";
         private static string productinCartLocator = "//div[@class='col-md-6 col-sm-12 product-name']";
         private static string atnaujintiKrepseliLocator = "//button[@name][1]";
@@ -34,6 +35,10 @@ namespace Framework.POM
             // Paspaudus mygtuką pridėti, jis pasikeičia ir būna pasikeitęs tol, kol prekė tampa pridėta
             // Taigi galima palaukti, kol toks pasikeitęs mygtukas nustos egzistuoti
             Common.WaitForElementToBeInvisible(addProductToCartLoadingLocator);
+            // Palaukiame, kol pasikeis prekių skaičiaus krepšelyje atvaizdavimas
+            // Kai prekės pridėjimo mygtukas pasikeičia, tuomet iššaukiamas žemiau esantis pasikeitimas
+            // Nepalaukus šio veiksmo ir paspaudus per anksti, būna rodomas tuščias krepšelis
+            Common.WaitForElementToBeVisible($"{showToCartLocator}/span[contains(@class,'do-animation')]");
         }
 
         public static void ClickShowToCart()

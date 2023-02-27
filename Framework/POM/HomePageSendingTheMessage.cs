@@ -17,7 +17,6 @@
 
         public static void ClickOnElementKontaktai()
         {
-            System.Threading.Thread.Sleep(4000);
             Common.ClickElement(elementKontaktaiLocator);
         }
 

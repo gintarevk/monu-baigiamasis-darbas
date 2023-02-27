@@ -7,7 +7,7 @@ namespace Framework.POM
         private static string url = "https://monu.lt/";
         private static string firstProductLocator = "//*[@id='slick-slide10']/div/div/div[1]/h2/a";
         private static string addProductToCartLocator = "//*[@type = 'submit'][1]";
-        private static string showToCartLocator = "//span[@class='item-counter minicart-counter'][1]";
+        private static string addProductToCartLoadingLocator = "//*[@type = 'submit' and contains(@class, 'et-loader')][1]";
         private static string minusOneLocator = "//*[@class = 'minus']";
         private static string productinCartLocator = "//div[@class='col-md-6 col-sm-12 product-name']";
         private static string atnaujintiKrepseliLocator = "//button[@name][1]";
@@ -30,6 +30,10 @@ namespace Framework.POM
         public static void ClickAddProductToCart()
         {
             Common.ClickElement(addProductToCartLocator);
+            // Palaukiame, kol prekė bus pridėta prie krepšelio
+            // Paspaudus mygtuką pridėti, jis pasikeičia ir būna pasikeitęs tol, kol prekė tampa pridėta
+            // Taigi galima palaukti, kol toks pasikeitęs mygtukas nustos egzistuoti
+            Common.WaitForElementToBeInvisible(addProductToCartLoadingLocator);
         }
 
         public static void ClickShowToCart()

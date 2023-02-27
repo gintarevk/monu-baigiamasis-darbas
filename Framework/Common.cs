@@ -34,7 +34,7 @@ namespace Framework
         internal static void WaitForElementToBeVisible(string locator)
         {
             WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
-            wait.Until(ExpectedConditions.ElementExists(By.XPath(locator)));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
         }
 
         internal static void SwitchToIframeByLocator(string locator)
@@ -62,9 +62,9 @@ namespace Framework
 
         internal static void WaitForElementToBeClickableIgnoreNotInteractable(string locator)
         {
-            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(20));
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
             wait.IgnoreExceptionTypes(typeof(ElementNotInteractableException), typeof(StaleElementReferenceException));
-            wait.Until(ExpectedConditions.ElementExists(By.XPath(locator)));
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
         }
 
         internal static void ScrollToElement(string firstProductLocator)
